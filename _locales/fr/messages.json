@@ -1,0 +1,413 @@
+{
+  "extensionName": {
+    "message": "Shortcuts"
+  },
+  "extensionDescription": {
+    "message": "Effectuer des tâches rapidement au clavier."
+  },
+  "goBackCommandDescription": {
+    "message": "Navigation · Accéder à la page précédente de l’historique de navigation"
+  },
+  "goForwardCommandDescription": {
+    "message": "Navigation · Accéder à la page suivante de l’historique de navigation"
+  },
+  "reloadTabCommandDescription": {
+    "message": "Navigation · Recharger la page"
+  },
+  "reloadTabWithoutCacheCommandDescription": {
+    "message": "Navigation · Recharger la page depuis son origine"
+  },
+  "goToNextPageCommandDescription": {
+    "message": "Navigation · Accéder au document suivant"
+  },
+  "goToPreviousPageCommandDescription": {
+    "message": "Navigation · Accéder au document précédent"
+  },
+  "removeURLParamsCommandDescription": {
+    "message": "Navigation · Supprimer les paramètres de l’URL"
+  },
+  "goUpCommandDescription": {
+    "message": "Navigation · Accéder au dossier parent du site web"
+  },
+  "goToRootCommandDescription": {
+    "message": "Navigation · Accéder à la page d’accueil du site web"
+  },
+  "focusTextInputCommandDescription": {
+    "message": "Accessibilité · Passer au champ de saisie suivant"
+  },
+  "focusMediaPlayerCommandDescription": {
+    "message": "Accessibilité · Passer au lecteur multimédia suivant"
+  },
+  "blurElementCommandDescription": {
+    "message": "Accessibilité · Mettre l’accent sur l’élément parent"
+  },
+  "copyURLCommandDescription": {
+    "message": "Presse-papiers · Copier le lien de la page"
+  },
+  "copyTitleCommandDescription": {
+    "message": "Presse-papiers · Copier le titre de la page"
+  },
+  "copyTitleAndURLCommandDescription": {
+    "message": "Presse-papiers · Copier le titre et le lien de la page"
+  },
+  "savePageCommandDescription": {
+    "message": "Enregistrer des pages · Enregistrer le contenu de la page"
+  },
+  "savePageAsMHTMLCommandDescription": {
+    "message": "Enregistrer des pages · Enregistrer la page au format MHTML"
+  },
+  "openWebSearchForSelectedTextCommandDescription": {
+    "message": "Recherche sur le web · Effectuer une recherche web de la sélection"
+  },
+  "scrollDownCommandDescription": {
+    "message": "Faire défiler · Faire défiler vers le bas"
+  },
+  "scrollUpCommandDescription": {
+    "message": "Faire défiler · Faire défiler vers le haut"
+  },
+  "scrollLeftCommandDescription": {
+    "message": "Faire défiler · Faire défiler vers la gauche"
+  },
+  "scrollRightCommandDescription": {
+    "message": "Faire défiler · Faire défiler vers la droite"
+  },
+  "scrollPageDownCommandDescription": {
+    "message": "Faire défiler · Faire défiler d’un écran vers le bas"
+  },
+  "scrollPageUpCommandDescription": {
+    "message": "Faire défiler · Faire défiler d’un écran vers le haut"
+  },
+  "scrollHalfPageDownCommandDescription": {
+    "message": "Faire défiler · Faire défiler d’une moitié d’écran vers le bas"
+  },
+  "scrollHalfPageUpCommandDescription": {
+    "message": "Faire défiler · Faire défiler d’une moitié d’écran vers le haut"
+  },
+  "scrollToTopCommandDescription": {
+    "message": "Faire défiler · Accéder au haut de la page"
+  },
+  "scrollToBottomCommandDescription": {
+    "message": "Faire défiler · Accéder au bas de la page"
+  },
+  "zoomInCommandDescription": {
+    "message": "Zoom · Augmenter la taille du texte"
+  },
+  "zoomOutCommandDescription": {
+    "message": "Zoom · Réduire la taille du texte"
+  },
+  "zoomResetCommandDescription": {
+    "message": "Zoom · Réinitialiser le niveau de zoom par défaut"
+  },
+  "toggleFullScreenCommandDescription": {
+    "message": "Zoom · Activer ou désactiver le mode plein écran"
+  },
+  "openNewTabCommandDescription": {
+    "message": "Créer des onglets · Ouvrir un nouvel onglet"
+  },
+  "openNewTabRightCommandDescription": {
+    "message": "Créer des onglets · Ouvrir un nouvel onglet à droite"
+  },
+  "openNewWindowCommandDescription": {
+    "message": "Créer des onglets · Ouvrir une nouvelle fenêtre"
+  },
+  "openNewIncognitoWindowCommandDescription": {
+    "message": "Créer des onglets · Ouvrir une nouvelle fenêtre de navigation privée"
+  },
+  "closeTabCommandDescription": {
+    "message": "Fermer les onglets · Fermer l’onglet"
+  },
+  "closeOtherTabsCommandDescription": {
+    "message": "Fermer les onglets · Fermer les autres onglets"
+  },
+  "closeRightTabsCommandDescription": {
+    "message": "Fermer les onglets · Fermer les onglets sur la droite"
+  },
+  "closeWindowCommandDescription": {
+    "message": "Fermer les onglets · Fermer la fenêtre"
+  },
+  "restoreTabCommandDescription": {
+    "message": "Fermer les onglets · Rouvrir l’onglet fermé"
+  },
+  "duplicateTabCommandDescription": {
+    "message": "Gérer les onglets · Dupliquer l’onglet"
+  },
+  "togglePinTabCommandDescription": {
+    "message": "Gérer les onglets · Épingler ou retirer l’onglet"
+  },
+  "toggleGroupTabCommandDescription": {
+    "message": "Gérer les onglets · Regrouper ou dégrouper les onglets"
+  },
+  "toggleCollapseTabGroupsCommandDescription": {
+    "message": "Gérer les onglets · Réduire ou développer les groupes d’onglets"
+  },
+  "toggleMuteTabCommandDescription": {
+    "message": "Gérer les onglets · Couper ou réactiver le son de l’onglet"
+  },
+  "discardTabCommandDescription": {
+    "message": "Gérer les onglets · Suspendre l’onglet"
+  },
+  "sortTabsByURLCommandDescription": {
+    "message": "Organiser les onglets · Organiser les onglets par domaine"
+  },
+  "groupTabsByDomainCommandDescription": {
+    "message": "Organiser les onglets · Regrouper les onglets par domaine"
+  },
+  "renameTabGroupCommandDescription": {
+    "message": "Gérer les groupes d’onglets · Renommer le groupe d’onglets"
+  },
+  "cycleTabGroupColorForwardCommandDescription": {
+    "message": "Gérer les groupes d’onglets · Sélectionner la couleur suivante du groupe d’onglets"
+  },
+  "cycleTabGroupColorBackwardCommandDescription": {
+    "message": "Gérer les groupes d’onglets · Sélectionner la couleur précédente du groupe d’onglets"
+  },
+  "activateAudibleTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer à l’onglet audible suivant"
+  },
+  "activateNextTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer à l’onglet suivant"
+  },
+  "activatePreviousTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer à l’onglet précédent"
+  },
+  "activateFirstTabCommandDescription": {
+    "message": "Accéder aux onglets · Accéder au premier onglet"
+  },
+  "activateSecondTabCommandDescription": {
+    "message": "Accéder aux onglets · Accéder au deuxième onglet"
+  },
+  "activateThirdTabCommandDescription": {
+    "message": "Accéder aux onglets · Accéder au troisième onglet"
+  },
+  "activateFourthTabCommandDescription": {
+    "message": "Accéder aux onglets · Accéder au quatrième onglet"
+  },
+  "activateFifthTabCommandDescription": {
+    "message": "Accéder aux onglets · Accéder au cinquième onglet"
+  },
+  "activateSixthTabCommandDescription": {
+    "message": "Accéder aux onglets · Accéder au sixième onglet"
+  },
+  "activateSeventhTabCommandDescription": {
+    "message": "Accéder aux onglets · Accéder au septième onglet"
+  },
+  "activateEighthTabCommandDescription": {
+    "message": "Accéder aux onglets · Accéder au huitième onglet"
+  },
+  "activateLastTabCommandDescription": {
+    "message": "Accéder aux onglets · Accéder au dernier onglet"
+  },
+  "activateLastActiveTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer à l’onglet le plus récent"
+  },
+  "activateSecondLastActiveTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer au deuxième onglet le plus récent"
+  },
+  "activateThirdLastActiveTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer au troisième onglet le plus récent"
+  },
+  "activateFourthLastActiveTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer au quatrième onglet le plus récent"
+  },
+  "activateFifthLastActiveTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer au cinquième onglet le plus récent"
+  },
+  "activateSixthLastActiveTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer au sixième onglet le plus récent"
+  },
+  "activateSeventhLastActiveTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer au septième onglet le plus récent"
+  },
+  "activateEighthLastActiveTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer au huitième onglet le plus récent"
+  },
+  "activateNinthLastActiveTabCommandDescription": {
+    "message": "Accéder aux onglets · Passer au neuvième onglet le plus récent"
+  },
+  "activateNextWindowCommandDescription": {
+    "message": "Accéder aux onglets · Passer à la fenêtre suivante"
+  },
+  "activatePreviousWindowCommandDescription": {
+    "message": "Accéder aux onglets · Passer à la fenêtre précédente"
+  },
+  "grabTabCommandDescription": {
+    "message": "Déplacer les onglets · Regrouper les onglets"
+  },
+  "moveTabLeftCommandDescription": {
+    "message": "Déplacer les onglets · Déplacer l’onglet vers la gauche"
+  },
+  "moveTabRightCommandDescription": {
+    "message": "Déplacer les onglets · Déplacer l’onglet vers la droite"
+  },
+  "moveTabFirstCommandDescription": {
+    "message": "Déplacer les onglets · Déplacer l’onglet en première position"
+  },
+  "moveTabLastCommandDescription": {
+    "message": "Déplacer les onglets · Déplacer l’onglet en dernière position"
+  },
+  "moveTabNewWindowCommandDescription": {
+    "message": "Déplacer les onglets · Déplacer l’onglet dans une nouvelle fenêtre"
+  },
+  "moveTabPreviousWindowCommandDescription": {
+    "message": "Déplacer les onglets · Déplacer l’onglet vers la fenêtre précédente"
+  },
+  "selectActiveTabCommandDescription": {
+    "message": "Sélection de plusieurs onglets · Désélectionner tous les autres onglets"
+  },
+  "selectPreviousTabCommandDescription": {
+    "message": "Sélection de plusieurs onglets · Sélectionner l’onglet situé à gauche"
+  },
+  "selectNextTabCommandDescription": {
+    "message": "Sélection de plusieurs onglets · Sélectionner l’onglet situé à droite"
+  },
+  "selectRelatedTabsCommandDescription": {
+    "message": "Sélection de plusieurs onglets · Sélectionner les onglets du même domaine"
+  },
+  "selectTabsInGroupCommandDescription": {
+    "message": "Sélection de plusieurs onglets · Sélectionner les onglets du même groupe"
+  },
+  "selectAllTabsCommandDescription": {
+    "message": "Sélection de plusieurs onglets · Sélectionner tous les onglets"
+  },
+  "selectRightTabsCommandDescription": {
+    "message": "Sélection de plusieurs onglets · Sélectionner les onglets sur la droite"
+  },
+  "moveTabSelectionFaceBackwardCommandDescription": {
+    "message": "Sélection de plusieurs onglets · Basculer la sélection d’onglets vers la gauche"
+  },
+  "moveTabSelectionFaceForwardCommandDescription": {
+    "message": "Sélection de plusieurs onglets · Basculer la sélection d’onglets vers la droite"
+  },
+  "bookmarkTabCommandDescription": {
+    "message": "Favoris · Ajouter l’onglet aux favoris"
+  },
+  "bookmarkSessionCommandDescription": {
+    "message": "Favoris · Ajouter tous les onglets aux favoris"
+  },
+  "addTabToReadingListCommandDescription": {
+    "message": "Liste de lecture · Ajouter l’onglet à la liste de lecture"
+  },
+  "openDownloadsFolderCommandDescription": {
+    "message": "Dossiers · Ouvrir le dossier de téléchargements"
+  },
+  "openBrowsingHistoryCommandDescription": {
+    "message": "Pages Chrome · Ouvrir l’historique de navigation"
+  },
+  "openSyncedTabsPageCommandDescription": {
+    "message": "Pages Chrome · Ouvrir la page « Onglets d’autres appareils »"
+  },
+  "openClearBrowserDataOptionsCommandDescription": {
+    "message": "Pages Chrome · Ouvrir les options « Supprimer les données de navigation »"
+  },
+  "openDownloadHistoryCommandDescription": {
+    "message": "Pages Chrome · Ouvrir l’historique des téléchargements"
+  },
+  "openBookmarkManagerCommandDescription": {
+    "message": "Pages Chrome · Ouvrir le gestionnaire de favoris"
+  },
+  "openSettingsCommandDescription": {
+    "message": "Pages Chrome · Ouvrir les réglages"
+  },
+  "openAppearanceSettingsCommandDescription": {
+    "message": "Pages Chrome · Ouvrir les réglages « Apparence »"
+  },
+  "openPasswordManagerCommandDescription": {
+    "message": "Pages Chrome · Ouvrir le gestionnaire de mots de passe"
+  },
+  "openPaymentMethodSettingsCommandDescription": {
+    "message": "Pages Chrome · Ouvrir les réglages « Modes de paiement »"
+  },
+  "openAddressSettingsCommandDescription": {
+    "message": "Pages Chrome · Ouvrir les réglages « Adresses et autres »"
+  },
+  "openSearchEngineSettingsCommandDescription": {
+    "message": "Pages Chrome · Ouvrir les réglages « Moteur de recherche »"
+  },
+  "openExtensionsPageCommandDescription": {
+    "message": "Pages Chrome · Ouvrir le gestionnaire d’extensions"
+  },
+  "openExtensionShortcutsPageCommandDescription": {
+    "message": "Pages Chrome · Ouvrir l’éditeur de raccourcis des extensions"
+  },
+  "openExperimentalSettingsCommandDescription": {
+    "message": "Pages Chrome · Ouvrir les options « Chrome flags »"
+  },
+  "openAboutChromePageCommandDescription": {
+    "message": "Pages Chrome · Ouvrir la page « À propos de Chrome »"
+  },
+  "openAboutChromeVersionPageCommandDescription": {
+    "message": "Pages Chrome · Ouvrir la page « À propos de la version de Chrome »"
+  },
+  "openWhatsNewPageCommandDescription": {
+    "message": "Pages Chrome · Ouvrir la page « Nouveautés sur Chrome »"
+  },
+  "openTabSuggestionLabel": {
+    "message": "Onglet ouvert"
+  },
+  "closedTabSuggestionLabel": {
+    "message": "Récemment fermé"
+  },
+  "syncedTabSuggestionLabel": {
+    "message": "Autre appareil"
+  },
+  "bookmarkSuggestionLabel": {
+    "message": "Favori"
+  },
+  "readingListSuggestionLabel": {
+    "message": "Liste de lecture"
+  },
+  "historySuggestionLabel": {
+    "message": "Récemment consulté"
+  },
+  "downloadSuggestionLabel": {
+    "message": "Téléchargement"
+  },
+  "copyURLNotificationTitle": {
+    "message": "Texte copié"
+  },
+  "copyURLNotificationMessage": {
+    "message": "$1 adresses copiées dans le presse-papiers"
+  },
+  "copyTitleNotificationTitle": {
+    "message": "Texte copié"
+  },
+  "copyTitleNotificationMessage": {
+    "message": "$1 titres copiés dans le presse-papiers"
+  },
+  "copyTitleAndURLNotificationTitle": {
+    "message": "Texte copié"
+  },
+  "copyTitleAndURLNotificationMessage": {
+    "message": "$1 titres et adresses copiés dans le presse-papiers"
+  },
+  "bookmarkTabNotificationTitle": {
+    "message": "Onglets ajoutés aux favoris"
+  },
+  "bookmarkTabNotificationMessage": {
+    "message": "$1 sites web ajoutés à vos favoris"
+  },
+  "bookmarkSessionFolderTitle": {
+    "message": "Session $1"
+  },
+  "bookmarkSessionNotificationTitle": {
+    "message": "Onglets ajoutés aux favoris"
+  },
+  "bookmarkSessionNotificationMessage": {
+    "message": "$1 sites web ajoutés à vos favoris dans « $2 »"
+  },
+  "addTabToReadingListNotificationTitle": {
+    "message": "Lire plus tard"
+  },
+  "addTabToReadingListNotificationMessage": {
+    "message": "$1 pages web ajoutées à votre liste de lecture"
+  },
+  "keyCodeValuePopoverMessage": {
+    "message": "« $1 » sur votre clavier."
+  },
+  "noKeyCodeValuePopoverMessage": {
+    "message": "Aucune valeur trouvée pour « $1 »."
+  },
+  "noResultsCommandPaletteLabel": {
+    "message": "Aucun résultat trouvé"
+  }
+}
