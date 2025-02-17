@@ -20,14 +20,45 @@ const suggestionEngine = new SuggestionEngine({
 })
 
 const suggestionLabels = new Map([
-  [SuggestionType.OpenTab, 'Open tab'],
-  [SuggestionType.ClosedTab, 'Recently closed'],
-  [SuggestionType.SyncedTab, 'Synced tab'],
-  [SuggestionType.Bookmark, 'Bookmark'],
-  [SuggestionType.ReadingList, 'Reading list'],
-  [SuggestionType.History, 'Recently visited'],
-  [SuggestionType.Download, 'Download'],
+  [SuggestionType.OpenTab, chrome.i18n.getMessage('openTabSuggestionLabel')],
+  [SuggestionType.ClosedTab, chrome.i18n.getMessage('closedTabSuggestionLabel')],
+  [SuggestionType.SyncedTab, chrome.i18n.getMessage('syncedTabSuggestionLabel')],
+  [SuggestionType.Bookmark, chrome.i18n.getMessage('bookmarkSuggestionLabel')],
+  [SuggestionType.ReadingList, chrome.i18n.getMessage('readingListSuggestionLabel')],
+  [SuggestionType.History, chrome.i18n.getMessage('historySuggestionLabel')],
+  [SuggestionType.Download, chrome.i18n.getMessage('downloadSuggestionLabel')],
 ])
+
+// Where we will expose the data we retrieve from the storage.
+const storageCache = {
+  manualPage: 'src/manual/manual.html',
+  optionsPage: 'src/options/options.html',
+}
+
+/**
+ * Handles the initial setup when the extension is first installed.
+ *
+ * @returns {Promise<void>}
+ */
+async function setupLocales() {
+  switch (chrome.i18n.getUILanguage()) {
+    case 'fr':
+      await chrome.action.setPopup({
+        popup: 'src/popup/popup.fr.html'
+      })
+      await chrome.storage.local.set({
+        manualPage: chrome.runtime.getURL('src/manual/manual.fr.html'),
+        optionsPage: chrome.runtime.getURL('src/options/options.fr.html'),
+      })
+      break
+
+    default:
+      await chrome.storage.local.set({
+        manualPage: chrome.runtime.getURL('src/manual/manual.html'),
+        optionsPage: chrome.runtime.getURL('src/options/options.html'),
+      })
+  }
+}
 
 /**
  * Adds items to the browser’s context menu.
@@ -82,6 +113,7 @@ function onInstalled(details) {
   }
   createMenuItems()
   runContentScripts()
+  setupLocales()
 }
 
 /**
@@ -94,7 +126,7 @@ async function onInstall() {
   await chrome.storage.sync.set(defaults)
   await chrome.tabs.create({
     active: true,
-    url: 'src/manual/manual.html'
+    url: 'https://taupiqueur.github.io/chrome-shortcuts'
   })
 }
 
@@ -136,6 +168,18 @@ async function onUpdate(previousVersion) {
       break
     }
   }
+}
+
+/**
+ * Handles the initial setup when the extension is first installed or updated to a new version.
+ *
+ * https://developer.chrome.com/docs/extensions/reference/api/runtime#event-onInstalled
+ *
+ * @param {object} details
+ * @returns {void}
+ */
+function onStartup() {
+  setupLocales()
 }
 
 /**
@@ -182,11 +226,13 @@ async function runContentScripts() {
  * @returns {Promise<void>}
  */
 async function onCommand(commandNameWithIndex, tab) {
-  const commandName = commandNameWithIndex.split('.')[1]
+  const commandName = commandNameWithIndex.split('_')[1]
 
   await commands[commandName]({
     tab,
-    recentTabsManager
+    recentTabsManager,
+    manualPage: storageCache.manualPage,
+    optionsPage: storageCache.optionsPage,
   })
 }
 
@@ -204,7 +250,7 @@ async function onMenuItemClicked(info, tab) {
     case 'open_documentation':
       openNewTab({
         active: true,
-        url: 'src/manual/manual.html',
+        url: storageCache.manualPage,
         openerTabId: tab.id,
       })
       break
@@ -348,6 +394,8 @@ function onConnect(port) {
         recentTabsManager,
         suggestionEngine,
         suggestionLabels,
+        manualPage: storageCache.manualPage,
+        optionsPage: storageCache.optionsPage,
       })
       break
 
@@ -422,9 +470,13 @@ function onWindowFocusChanged(windowId) {
   recentTabsManager.onWindowFocusChanged(windowId)
 }
 
+// Configure Pandoc.
+chrome.storage.local.get((options) => Object.assign(storageCache, options))
+
 // Set up listeners.
 // https://developer.chrome.com/docs/extensions/develop/concepts/service-workers/events
 chrome.runtime.onInstalled.addListener(onInstalled)
+chrome.runtime.onStartup.addListener(onStartup)
 chrome.commands.onCommand.addListener(onCommand)
 chrome.contextMenus.onClicked.addListener(onMenuItemClicked)
 chrome.runtime.onConnect.addListener(onConnect)
