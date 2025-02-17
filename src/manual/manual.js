@@ -96,7 +96,10 @@ for (const keyElement of keyCodeElements) {
     keyElement.replaceWith(
       createPopover(
         new Text(
-          `“${keyValue}” on your keyboard.`
+          chrome.i18n.getMessage(
+            'keyCodeValuePopover',
+            keyValue
+          )
         ),
         keyElement
       )
@@ -105,7 +108,10 @@ for (const keyElement of keyCodeElements) {
     keyElement.replaceWith(
       createPopover(
         new Text(
-          `No value found for “${codeValue}”.`
+          chrome.i18n.getMessage(
+            'noKeyCodeValuePopover',
+            codeValue
+          )
         ),
         keyElement
       )

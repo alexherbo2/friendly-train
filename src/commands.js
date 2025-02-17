@@ -192,8 +192,7 @@ const sameGroup = compare(_groupId)
  * @returns {Promise<void>}
  */
 export async function openShortcutsManual(cx) {
-  const url = chrome.runtime.getURL('src/manual/manual.html')
-  await openChromePage(cx, url)
+  await openChromePage(cx, cx.manualPage)
 }
 
 /**
@@ -203,7 +202,7 @@ export async function openShortcutsManual(cx) {
  * @returns {Promise<void>}
  */
 export async function openShortcutsOptionsPage(cx) {
-  await chrome.runtime.openOptionsPage()
+  await openChromePage(cx, cx.optionsPage)
 }
 
 // Navigation ------------------------------------------------------------------
@@ -463,7 +462,10 @@ export async function copyURL(cx) {
     args: [text]
   })
 
-  await sendNotification('Text copied', `${tabs.length} URLs copied to clipboard`)
+  await sendNotification(
+    chrome.i18n.getMessage('copiedURLNotificationTitle'),
+    chrome.i18n.getMessage('copiedURLNotificationMessage', tabs.length.toString()),
+  )
 }
 
 /**
@@ -491,7 +493,10 @@ export async function copyTitle(cx) {
     args: [text]
   })
 
-  await sendNotification('Text copied', `${tabs.length} titles copied to clipboard`)
+  await sendNotification(
+    chrome.i18n.getMessage('copiedTitleNotificationTitle'),
+    chrome.i18n.getMessage('copiedTitleNotificationMessage', tabs.length.toString()),
+  )
 }
 
 /**
@@ -519,7 +524,10 @@ export async function copyTitleAndURL(cx) {
     args: [text]
   })
 
-  await sendNotification('Text copied', `${tabs.length} titles and URLs copied to clipboard`)
+  await sendNotification(
+    chrome.i18n.getMessage('copiedTitleAndURLNotificationTitle'),
+    chrome.i18n.getMessage('copiedTitleAndURLNotificationMessage', tabs.length.toString()),
+  )
 }
 
 // Save pages ------------------------------------------------------------------
@@ -2558,7 +2566,10 @@ export async function bookmarkTab(cx) {
       )
   )
 
-  await sendNotification('Tabs bookmarked', `${createdBookmarks.length} bookmarks added`)
+  await sendNotification(
+    chrome.i18n.getMessage('createdBookmarkNotificationTitle'),
+    chrome.i18n.getMessage('createdBookmarkNotificationMessage', createdBookmarks.length.toString()),
+  )
 }
 
 /**
@@ -2616,7 +2627,10 @@ export async function bookmarkSession(cx) {
   )
 
   await openChromePage(cx, `chrome://bookmarks/?id=${baseFolder.id}`)
-  await sendNotification('Session bookmarked', `${createdBookmarks.length} bookmarks added into “${baseFolder.title}”`)
+  await sendNotification(
+    chrome.i18n.getMessage('createdSessionBookmarkNotificationTitle'),
+    chrome.i18n.getMessage('createdSessionBookmarkNotificationMessage', createdBookmarks.length.toString(), baseFolder.title),
+  )
 }
 
 // Reading list ----------------------------------------------------------------
@@ -2665,7 +2679,10 @@ export async function addTabToReadingList(cx) {
       )
   )
 
-  await sendNotification('Read later', `${createdItems.length} pages added to your reading list`)
+  await sendNotification(
+    chrome.i18n.getMessage('createdReadingListItemNotificationTitle'),
+    chrome.i18n.getMessage('createdReadingListItemNotificationMessage', createdItems.length.toString()),
+  )
 }
 
 // Folders ---------------------------------------------------------------------

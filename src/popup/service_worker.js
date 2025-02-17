@@ -274,7 +274,9 @@ async function onCommandMessage(message, port, cx) {
 
     await commands[commandName]({
       tab: tabs[0],
-      recentTabsManager: cx.recentTabsManager
+      recentTabsManager: cx.recentTabsManager,
+      manualPage: cx.manualPage,
+      optionsPage: cx.optionsPage,
     })
 
     if (
