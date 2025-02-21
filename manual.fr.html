@@ -1,0 +1,2562 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuel Shortcuts</title>
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="manual.css">
+  </head>
+  <body>
+    <main id="shortcuts_manual">
+      <h1>
+        <a href="#shortcuts_manual">
+          Manuel Shortcuts
+        </a>
+      </h1>
+      <p role="important">
+        Important : Nécessite soit <button popovertarget="chrome_version_notice_popover" class="tag-pill" title="Available from this Chrome version and higher.">Chrome 127+</button>, <a href="https://google.com/chrome/dev/" target="_blank">Chrome Dev</a> ou <a href="https://google.com/chrome/canary/" target="_blank">Chrome Canary</a> pour maintenir la popup au premier plan.
+        Consultez le changelog <a href="https://developer.chrome.com/docs/extensions/whats-new?hl=fr#chrome_127_new_actionopenpopup_api" target="_blank">Chrome 127: nouvelle API <code>action.openPopup</code></a> pour en savoir plus.
+      </p>
+      <div id="chrome_version_notice_popover" popover>
+        Disponible à partir de cette version de Chrome.
+      </div>
+      <section id="usage">
+        <h2>
+          <a href="#usage">
+            Guide d’utilisation
+          </a>
+        </h2>
+        <p>
+          <kbd>Alt</kbd>+<kbd>Espace</kbd> (<kbd>Ctrl</kbd>+<kbd>Espace</kbd> sous Windows) est le raccourci clavier principal.
+          Utilisez-le pour ouvrir le menu de l’extension—aka mode « Vim ».
+          Appuyez sur <kbd class="code">Slash</kbd> pour rechercher des commandes et <kbd class="code">Escape</kbd> pour annuler.
+        </p>
+        <p>
+          Si vous avez besoin d’explications sur les raccourcis—Faites un clic droit sur l’icône de l’extension et sélectionnez « Documentation ».
+        </p>
+        <p>
+          Les raccourcis clavier sont entièrement personnalisables.
+        </p>
+        <section id="command_palette">
+          <h3>
+            <a href="#command_palette">
+              Palette de commandes
+            </a>
+          </h3>
+          <p>
+            La palette de commandes est le principal moyen de rechercher des fonctionnalités dans Shortcuts.
+          </p>
+          <ol>
+            <li>
+              Pour ouvrir la palette de commandes—Appuyez soit sur la touche <kbd class="code">Slash</kbd>, <kbd>Ctrl</kbd>+<kbd class="code">KeyF</kbd> ou cliquez dans le champ de recherche du menu de l’extension.
+            </li>
+            <li>
+              Dans le champ de recherche, saisissez l’objet de votre recherche—les résultats s’affichent pendant votre saisie.
+            </li>
+            <li>
+              Choisissez une suggestion et appuyez sur la touche <kbd class="code">Enter</kbd> pour activer la sélection.
+            </li>
+          </ol>
+        </section>
+        <section id="configure_keyboard_shortcuts">
+          <h3>
+            <a href="#configure_keyboard_shortcuts">
+              Configurer les raccourcis clavier
+            </a>
+          </h3>
+          <p>
+            Accédez à <a href="chrome://extensions/shortcuts" target="_blank">chrome://extensions/shortcuts</a> pour configurer les raccourcis clavier globaux.
+            Par exemple, vous pouvez assigner <kbd>Ctrl</kbd>+<kbd>Y</kbd> pour ouvrir un nouvel onglet à droite.
+            Vous pouvez également assigner des raccourcis pour dupliquer un onglet, copier le lien d’une page et plus encore.
+            <a href="#commands">Voir la liste des actions pour Chrome.</a>
+          </p>
+          <p>
+            Vous pouvez également configurer les raccourcis du menu de l’extension en important et exportant les paramètres
+            dans la page des options—Faites un clic droit sur l’icône de l’extension et sélectionnez « Options ».
+          </p>
+          <details>
+            <summary>Exemple de configuration</summary>
+            <div class="code-block-container">
+              <pre><code data-lang="json">{
+  <span data-type="string">"commandBindings"</span>: [
+    { <span data-type="string">"command"</span>: <span data-type="string">"openShortcutsManual"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"F1"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openShortcutsOptionsPage"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"F2"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openCommandPalette"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Slash"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openCommandPalette"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyF"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"closePopup"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Escape"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"closePopup"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyC"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"closePopup"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyQ"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"goBack"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyH"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"goForward"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyL"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"reloadTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyR"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"reloadTabWithoutCache"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyR"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"goToNextPage"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Period"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"goToPreviousPage"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Comma"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"removeURLParams"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyU"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"goUp"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyU"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"goToRoot"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyU"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"focusTextInput"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyI"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"focusMediaPlayer"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyV"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"blurElement"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Escape"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"copyURL"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyY"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"copyTitle"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyY"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"copyTitleAndURL"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyY"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"savePage"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyS"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"savePageAsMHTML"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyS"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openWebSearchForSelectedText"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyW"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollDown"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyJ"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollUp"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyK"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollLeft"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyH"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollRight"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyL"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollPageDown"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Space"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollPageUp"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Space"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollHalfPageDown"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyJ"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollHalfPageUp"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyK"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollToTop"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyG"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"scrollToBottom"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyE"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"zoomIn"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Equal"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"zoomOut"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Minus"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"zoomReset"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit0"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"toggleFullScreen"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyF"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openNewTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyT"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openNewTabRight"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyO"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openNewWindow"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyN"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openNewIncognitoWindow"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyN"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"closeTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyX"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"closeOtherTabs"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyX"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"closeRightTabs"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyX"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"closeWindow"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyX"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"restoreTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyU"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"duplicateTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyB"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"togglePinTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyP"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"toggleGroupTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyP"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"toggleCollapseTabGroups"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyC"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"toggleMuteTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyM"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"discardTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyD"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"sortTabsByURL"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit1"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"groupTabsByDomain"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit2"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"renameTabGroup"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyR"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"cycleTabGroupColorForward"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyA"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"cycleTabGroupColorBackward"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyA"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateAudibleTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit3"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateNextTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Tab"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateNextTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyK"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activatePreviousTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Tab"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activatePreviousTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyJ"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateFirstTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit1"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateSecondTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit2"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateThirdTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit3"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateFourthTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit4"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateFifthTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit5"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateSixthTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit6"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateSeventhTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit7"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateEighthTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit8"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateLastTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Digit9"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateLastActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit1"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateSecondLastActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit2"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateThirdLastActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit3"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateFourthLastActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit4"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateFifthLastActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit5"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateSixthLastActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit6"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateSeventhLastActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit7"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateEighthLastActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit8"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateNinthLastActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Digit9"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateNextWindow"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyW"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activatePreviousWindow"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyW"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"grabTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyG"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"moveTabLeft"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"ArrowLeft"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"moveTabRight"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"ArrowRight"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"moveTabFirst"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Home"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"moveTabLast"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"End"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"moveTabNewWindow"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"ArrowUp"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"moveTabPreviousWindow"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"ArrowDown"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectActiveTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyS"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectPreviousTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"BracketLeft"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectNextTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"BracketRight"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectRelatedTabs"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Backquote"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectTabsInGroup"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"KeyA"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectAllTabs"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyA"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectRightTabs"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyS"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"moveTabSelectionFaceBackward"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"BracketLeft"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"moveTabSelectionFaceForward"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"BracketRight"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"bookmarkTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyD"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"bookmarkSession"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyB"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"addTabToReadingList"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyD"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openDownloadsFolder"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyK"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openBrowsingHistory"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyH"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openSyncedTabsPage"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyT"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openClearBrowserDataOptions"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Delete"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openDownloadHistory"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyJ"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openBookmarkManager"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyO"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openSettings"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Comma"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openPasswordManager"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyY"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openSearchEngineSettings"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Slash"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openExtensionsPage"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyA"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openExtensionShortcutsPage"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Equal"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openExperimentalSettings"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Comma"</span> } }
+  ],
+  <span data-type="string">"paletteBindings"</span>: [
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectNextItem"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"ArrowDown"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectNextItem"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyN"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectNextItem"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Tab"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectPreviousItem"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"ArrowUp"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectPreviousItem"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyP"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"selectPreviousItem"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Tab"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"activateSelectedItem"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Enter"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openSelectedItemInCurrentTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"altKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Enter"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openSelectedItemInNewBackgroundTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Enter"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openSelectedItemInNewBackgroundTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"metaKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Enter"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openSelectedItemInNewForegroundTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Enter"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openSelectedItemInNewForegroundTab"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"metaKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Enter"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"openSelectedItemInNewWindow"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"shiftKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"Enter"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"movePageDown"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"PageDown"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"movePageDown"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyD"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"movePageUp"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"PageUp"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"movePageUp"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyU"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"closeCommandPalette"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"code"</span>: <span data-type="string">"Escape"</span> } },
+    { <span data-type="string">"command"</span>: <span data-type="string">"closeCommandPalette"</span>, <span data-type="string">"key"</span>: { <span data-type="string">"ctrlKey"</span>: <span data-type="boolean">true</span>, <span data-type="string">"code"</span>: <span data-type="string">"KeyC"</span> } }
+  ]
+}
+</code></pre>
+              <div>
+                <button
+                  aria-label="Copier"
+                  data-copy-feedback="Copié!"
+                  data-action="copyToClipboard"
+                  value="{
+  &quot;commandBindings&quot;: [
+    { &quot;command&quot;: &quot;openShortcutsManual&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;F1&quot; } },
+    { &quot;command&quot;: &quot;openShortcutsOptionsPage&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;F2&quot; } },
+    { &quot;command&quot;: &quot;openCommandPalette&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Slash&quot; } },
+    { &quot;command&quot;: &quot;openCommandPalette&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyF&quot; } },
+    { &quot;command&quot;: &quot;closePopup&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Escape&quot; } },
+    { &quot;command&quot;: &quot;closePopup&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyC&quot; } },
+    { &quot;command&quot;: &quot;closePopup&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyQ&quot; } },
+    { &quot;command&quot;: &quot;goBack&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyH&quot; } },
+    { &quot;command&quot;: &quot;goForward&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyL&quot; } },
+    { &quot;command&quot;: &quot;reloadTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyR&quot; } },
+    { &quot;command&quot;: &quot;reloadTabWithoutCache&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyR&quot; } },
+    { &quot;command&quot;: &quot;goToNextPage&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Period&quot; } },
+    { &quot;command&quot;: &quot;goToPreviousPage&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Comma&quot; } },
+    { &quot;command&quot;: &quot;removeURLParams&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyU&quot; } },
+    { &quot;command&quot;: &quot;goUp&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyU&quot; } },
+    { &quot;command&quot;: &quot;goToRoot&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyU&quot; } },
+    { &quot;command&quot;: &quot;focusTextInput&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyI&quot; } },
+    { &quot;command&quot;: &quot;focusMediaPlayer&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyV&quot; } },
+    { &quot;command&quot;: &quot;blurElement&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Escape&quot; } },
+    { &quot;command&quot;: &quot;copyURL&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyY&quot; } },
+    { &quot;command&quot;: &quot;copyTitle&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyY&quot; } },
+    { &quot;command&quot;: &quot;copyTitleAndURL&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyY&quot; } },
+    { &quot;command&quot;: &quot;savePage&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyS&quot; } },
+    { &quot;command&quot;: &quot;savePageAsMHTML&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyS&quot; } },
+    { &quot;command&quot;: &quot;openWebSearchForSelectedText&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyW&quot; } },
+    { &quot;command&quot;: &quot;scrollDown&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyJ&quot; } },
+    { &quot;command&quot;: &quot;scrollUp&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyK&quot; } },
+    { &quot;command&quot;: &quot;scrollLeft&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyH&quot; } },
+    { &quot;command&quot;: &quot;scrollRight&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyL&quot; } },
+    { &quot;command&quot;: &quot;scrollPageDown&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Space&quot; } },
+    { &quot;command&quot;: &quot;scrollPageUp&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Space&quot; } },
+    { &quot;command&quot;: &quot;scrollHalfPageDown&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyJ&quot; } },
+    { &quot;command&quot;: &quot;scrollHalfPageUp&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyK&quot; } },
+    { &quot;command&quot;: &quot;scrollToTop&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyG&quot; } },
+    { &quot;command&quot;: &quot;scrollToBottom&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyE&quot; } },
+    { &quot;command&quot;: &quot;zoomIn&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Equal&quot; } },
+    { &quot;command&quot;: &quot;zoomOut&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Minus&quot; } },
+    { &quot;command&quot;: &quot;zoomReset&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit0&quot; } },
+    { &quot;command&quot;: &quot;toggleFullScreen&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyF&quot; } },
+    { &quot;command&quot;: &quot;openNewTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyT&quot; } },
+    { &quot;command&quot;: &quot;openNewTabRight&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyO&quot; } },
+    { &quot;command&quot;: &quot;openNewWindow&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyN&quot; } },
+    { &quot;command&quot;: &quot;openNewIncognitoWindow&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyN&quot; } },
+    { &quot;command&quot;: &quot;closeTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyX&quot; } },
+    { &quot;command&quot;: &quot;closeOtherTabs&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyX&quot; } },
+    { &quot;command&quot;: &quot;closeRightTabs&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyX&quot; } },
+    { &quot;command&quot;: &quot;closeWindow&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyX&quot; } },
+    { &quot;command&quot;: &quot;restoreTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyU&quot; } },
+    { &quot;command&quot;: &quot;duplicateTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyB&quot; } },
+    { &quot;command&quot;: &quot;togglePinTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyP&quot; } },
+    { &quot;command&quot;: &quot;toggleGroupTab&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyP&quot; } },
+    { &quot;command&quot;: &quot;toggleCollapseTabGroups&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyC&quot; } },
+    { &quot;command&quot;: &quot;toggleMuteTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyM&quot; } },
+    { &quot;command&quot;: &quot;discardTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyD&quot; } },
+    { &quot;command&quot;: &quot;sortTabsByURL&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Digit1&quot; } },
+    { &quot;command&quot;: &quot;groupTabsByDomain&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Digit2&quot; } },
+    { &quot;command&quot;: &quot;renameTabGroup&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyR&quot; } },
+    { &quot;command&quot;: &quot;cycleTabGroupColorForward&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyA&quot; } },
+    { &quot;command&quot;: &quot;cycleTabGroupColorBackward&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyA&quot; } },
+    { &quot;command&quot;: &quot;activateAudibleTab&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Digit3&quot; } },
+    { &quot;command&quot;: &quot;activateNextTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Tab&quot; } },
+    { &quot;command&quot;: &quot;activateNextTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyK&quot; } },
+    { &quot;command&quot;: &quot;activatePreviousTab&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Tab&quot; } },
+    { &quot;command&quot;: &quot;activatePreviousTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyJ&quot; } },
+    { &quot;command&quot;: &quot;activateFirstTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit1&quot; } },
+    { &quot;command&quot;: &quot;activateSecondTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit2&quot; } },
+    { &quot;command&quot;: &quot;activateThirdTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit3&quot; } },
+    { &quot;command&quot;: &quot;activateFourthTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit4&quot; } },
+    { &quot;command&quot;: &quot;activateFifthTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit5&quot; } },
+    { &quot;command&quot;: &quot;activateSixthTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit6&quot; } },
+    { &quot;command&quot;: &quot;activateSeventhTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit7&quot; } },
+    { &quot;command&quot;: &quot;activateEighthTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit8&quot; } },
+    { &quot;command&quot;: &quot;activateLastTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Digit9&quot; } },
+    { &quot;command&quot;: &quot;activateLastActiveTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Digit1&quot; } },
+    { &quot;command&quot;: &quot;activateSecondLastActiveTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Digit2&quot; } },
+    { &quot;command&quot;: &quot;activateThirdLastActiveTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Digit3&quot; } },
+    { &quot;command&quot;: &quot;activateFourthLastActiveTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Digit4&quot; } },
+    { &quot;command&quot;: &quot;activateFifthLastActiveTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Digit5&quot; } },
+    { &quot;command&quot;: &quot;activateSixthLastActiveTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Digit6&quot; } },
+    { &quot;command&quot;: &quot;activateSeventhLastActiveTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Digit7&quot; } },
+    { &quot;command&quot;: &quot;activateEighthLastActiveTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Digit8&quot; } },
+    { &quot;command&quot;: &quot;activateNinthLastActiveTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Digit9&quot; } },
+    { &quot;command&quot;: &quot;activateNextWindow&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyW&quot; } },
+    { &quot;command&quot;: &quot;activatePreviousWindow&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyW&quot; } },
+    { &quot;command&quot;: &quot;grabTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyG&quot; } },
+    { &quot;command&quot;: &quot;moveTabLeft&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;ArrowLeft&quot; } },
+    { &quot;command&quot;: &quot;moveTabRight&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;ArrowRight&quot; } },
+    { &quot;command&quot;: &quot;moveTabFirst&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Home&quot; } },
+    { &quot;command&quot;: &quot;moveTabLast&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;End&quot; } },
+    { &quot;command&quot;: &quot;moveTabNewWindow&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;ArrowUp&quot; } },
+    { &quot;command&quot;: &quot;moveTabPreviousWindow&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;ArrowDown&quot; } },
+    { &quot;command&quot;: &quot;selectActiveTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyS&quot; } },
+    { &quot;command&quot;: &quot;selectPreviousTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;BracketLeft&quot; } },
+    { &quot;command&quot;: &quot;selectNextTab&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;BracketRight&quot; } },
+    { &quot;command&quot;: &quot;selectRelatedTabs&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Backquote&quot; } },
+    { &quot;command&quot;: &quot;selectTabsInGroup&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;KeyA&quot; } },
+    { &quot;command&quot;: &quot;selectAllTabs&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyA&quot; } },
+    { &quot;command&quot;: &quot;selectRightTabs&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyS&quot; } },
+    { &quot;command&quot;: &quot;moveTabSelectionFaceBackward&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;BracketLeft&quot; } },
+    { &quot;command&quot;: &quot;moveTabSelectionFaceForward&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;BracketRight&quot; } },
+    { &quot;command&quot;: &quot;bookmarkTab&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyD&quot; } },
+    { &quot;command&quot;: &quot;bookmarkSession&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;KeyB&quot; } },
+    { &quot;command&quot;: &quot;addTabToReadingList&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;KeyD&quot; } },
+    { &quot;command&quot;: &quot;openDownloadsFolder&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyK&quot; } },
+    { &quot;command&quot;: &quot;openBrowsingHistory&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyH&quot; } },
+    { &quot;command&quot;: &quot;openSyncedTabsPage&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyT&quot; } },
+    { &quot;command&quot;: &quot;openClearBrowserDataOptions&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;Delete&quot; } },
+    { &quot;command&quot;: &quot;openDownloadHistory&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyJ&quot; } },
+    { &quot;command&quot;: &quot;openBookmarkManager&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyO&quot; } },
+    { &quot;command&quot;: &quot;openSettings&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Comma&quot; } },
+    { &quot;command&quot;: &quot;openPasswordManager&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyY&quot; } },
+    { &quot;command&quot;: &quot;openSearchEngineSettings&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;Slash&quot; } },
+    { &quot;command&quot;: &quot;openExtensionsPage&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyA&quot; } },
+    { &quot;command&quot;: &quot;openExtensionShortcutsPage&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Equal&quot; } },
+    { &quot;command&quot;: &quot;openExperimentalSettings&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;Comma&quot; } }
+  ],
+  &quot;paletteBindings&quot;: [
+    { &quot;command&quot;: &quot;selectNextItem&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;ArrowDown&quot; } },
+    { &quot;command&quot;: &quot;selectNextItem&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyN&quot; } },
+    { &quot;command&quot;: &quot;selectNextItem&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Tab&quot; } },
+    { &quot;command&quot;: &quot;selectPreviousItem&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;ArrowUp&quot; } },
+    { &quot;command&quot;: &quot;selectPreviousItem&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyP&quot; } },
+    { &quot;command&quot;: &quot;selectPreviousItem&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Tab&quot; } },
+    { &quot;command&quot;: &quot;activateSelectedItem&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Enter&quot; } },
+    { &quot;command&quot;: &quot;openSelectedItemInCurrentTab&quot;, &quot;key&quot;: { &quot;altKey&quot;: true, &quot;code&quot;: &quot;Enter&quot; } },
+    { &quot;command&quot;: &quot;openSelectedItemInNewBackgroundTab&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;Enter&quot; } },
+    { &quot;command&quot;: &quot;openSelectedItemInNewBackgroundTab&quot;, &quot;key&quot;: { &quot;metaKey&quot;: true, &quot;code&quot;: &quot;Enter&quot; } },
+    { &quot;command&quot;: &quot;openSelectedItemInNewForegroundTab&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Enter&quot; } },
+    { &quot;command&quot;: &quot;openSelectedItemInNewForegroundTab&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;metaKey&quot;: true, &quot;code&quot;: &quot;Enter&quot; } },
+    { &quot;command&quot;: &quot;openSelectedItemInNewWindow&quot;, &quot;key&quot;: { &quot;shiftKey&quot;: true, &quot;code&quot;: &quot;Enter&quot; } },
+    { &quot;command&quot;: &quot;movePageDown&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;PageDown&quot; } },
+    { &quot;command&quot;: &quot;movePageDown&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyD&quot; } },
+    { &quot;command&quot;: &quot;movePageUp&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;PageUp&quot; } },
+    { &quot;command&quot;: &quot;movePageUp&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyU&quot; } },
+    { &quot;command&quot;: &quot;closeCommandPalette&quot;, &quot;key&quot;: { &quot;code&quot;: &quot;Escape&quot; } },
+    { &quot;command&quot;: &quot;closeCommandPalette&quot;, &quot;key&quot;: { &quot;ctrlKey&quot;: true, &quot;code&quot;: &quot;KeyC&quot; } }
+  ]
+}
+"
+                >
+                  Copier
+                </button>
+              </div>
+            </div>
+          </details>
+        </section>
+        <section id="in_practice">
+          <h3>
+            <a href="#in_practice">
+              En pratique?
+            </a>
+          </h3>
+          <p>
+            <kbd>Alt</kbd>+<kbd>J</kbd> et <kbd>Alt</kbd>+<kbd>K</kbd> sont les deux raccourcis que j’ai configuré pour accéder au menu Shortcuts—dans l’éditeur de raccourcis « Activer l’extension »—et cliquer avec <a href="https://lydell.github.io/LinkHints/" target="_blank">Link Hints</a>—dans les options « Raccourcis clavier ».
+          </p>
+          <p>
+            Pour compléter les raccourcis clavier fournis par défaut, j’ai également assigné
+            <ul>
+              <li>
+                <kbd>Ctrl</kbd>+<kbd>Y</kbd> pour ouvrir un nouvel onglet à droite,
+              </li>
+              <li>
+                <kbd>Ctrl</kbd>+<kbd>B</kbd> pour dupliquer un onglet,
+              </li>
+              <li>
+                <kbd>Alt</kbd>+<kbd>W</kbd> pour effectuer une recherche du terme sélectionné,
+              </li>
+              <li>
+                <kbd>Alt</kbd>+<kbd>Y</kbd> pour copier le lien d’une page,
+              </li>
+              <li>
+                <kbd>Alt</kbd>+<kbd>I</kbd> pour passer au champ de saisie suivant.
+              </li>
+            </ul>
+          </p>
+        </section>
+      </section>
+      <section id="commands">
+        <h2>
+          <a href="#commands">
+            Commandes
+          </a>
+        </h2>
+        <p>
+          Les commandes sont des actions qui peuvent être effectuées avec le clavier ou la souris—dans le menu de l’extension.
+        </p>
+        <section id="about_keyboard_shortcuts">
+          <h3>
+            <a href="#about_keyboard_shortcuts">
+              About keyboard shortcuts
+            </a>
+          </h3>
+          <ul>
+            <li>
+              <kbd>⌃</kbd> représente la touche <kbd>Ctrl</kbd> sur votre clavier.
+            </li>
+            <li>
+              <kbd>⌥</kbd> représente la touche <kbd>Alt</kbd> ou <kbd>Opt</kbd> sur votre clavier macOS.
+            </li>
+            <li>
+              <kbd>⇧</kbd> représente la touche <kbd>Maj</kbd> sur votre clavier.
+            </li>
+            <li>
+              <kbd>⌘</kbd> représente la touche <kbd>Windows</kbd> ou <kbd>Cmd</kbd> sur votre clavier macOS.
+            </li>
+          </ul>
+          <p>
+            Les raccourcis clavier du menu de l’extension sont définis avec des touches physiques.
+            Ces touches sont présentées ci-dessous.
+            Les touches bleues sont présentes sur tous les claviers standards, tandis que les touches vertes ne sont disponibles que sur certains claviers.
+          </p>
+          <figure>
+            <img src="https://w3c.github.io/uievents-code/images/keyboard-codes-alphanum1.svg" alt="The writing system keys">
+            <figcaption>
+              The writing system keys.
+            </figcaption>
+          </figure>
+          <p>
+            Pour obtenir la liste complète des touches physiques, consultez l’article <a href="https://w3c.github.io/uievents-code/#code-value-tables" lang="en" target="_blank">Keyboard Event <code>code</code> Value Tables</a> (en anglais).
+            Vous y trouverez la liste des touches physiques et informations relatives aux symboles.
+          </p>
+          <p role="tip">
+            Astuce : Vous pouvez cliquer sur les touches roses—qui représentent une touche physique—pour voir la touche à appuyer
+            (p. ex., cliquer sur <kbd class="code">KeyQ</kbd> affichera « a » sur un clavier français).
+          </p>
+        </section>
+        <section id="shortcuts_commands">
+          <h3>
+            <a href="#shortcuts_commands">
+              Shortcuts
+            </a>
+          </h3>
+          <p>
+            Ces commandes ne sont disponibles que dans le menu de l’extension.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>openShortcutsManual</code></td>
+                  <td>Open the Shortcuts manual</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">F1</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openShortcutsOptionsPage</code></td>
+                  <td>Open the Shortcuts “Options” page</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">F2</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openCommandPalette</code></td>
+                  <td>Open the command palette</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">Slash</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyF</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>closePopup</code></td>
+                  <td>Close the popup window</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">Escape</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyC</kbd>,
+                    <kbd class="code">KeyQ</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="command_palette_commands">
+          <h3>
+            <a href="#command_palette_commands">
+              Palette de commandes
+            </a>
+          </h3>
+          <p>
+            Ces commandes ne sont disponibles que dans la palette de commandes.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci de la palette de commandes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>selectNextItem</code></td>
+                  <td>Select the next item</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">ArrowDown</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyN</kbd>,
+                    <kbd class="code">Tab</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>selectPreviousItem</code></td>
+                  <td>Select the previous item</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">ArrowUp</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyP</kbd>,
+                    <kbd>Maj</kbd>+<kbd class="code">Tab</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateSelectedItem</code></td>
+                  <td>Activate selected item</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openSelectedItemInCurrentTab</code></td>
+                  <td>Open selected item in the current tab</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openSelectedItemInNewBackgroundTab</code></td>
+                  <td>Open selected item in a new background tab</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">Enter</kbd>,
+                    <kbd>Cmd</kbd>+<kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openSelectedItemInNewForegroundTab</code></td>
+                  <td>Open selected item in a new foreground tab</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd class="code">Enter</kbd>,
+                    <kbd>Maj</kbd>+<kbd>Cmd</kbd>+<kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openSelectedItemInNewWindow</code></td>
+                  <td>Open selected item in a new window</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>movePageDown</code></td>
+                  <td>Move page down</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">PageDown</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyD</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>movePageUp</code></td>
+                  <td>Move page up</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">PageUp</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyU</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>closeCommandPalette</code></td>
+                  <td>Close the command palette</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">Escape</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyC</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="navigation_commands">
+          <h3>
+            <a href="#navigation_commands">
+              Navigation
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>goBack</code></td>
+                  <td>Accéder à la page précédente de l’historique de navigation</td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd>Flèche gauche</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>Accolade ouvrante</kbd>,
+                    <kbd>Cmd</kbd>+<kbd>Flèche gauche</kbd>
+                  </td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyH</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>goForward</code></td>
+                  <td>Accéder à la page suivante de l’historique de navigation</td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd>Flèche droite</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>Accolade fermante</kbd>,
+                    <kbd>Cmd</kbd>+<kbd>Flèche droite</kbd>
+                  </td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyL</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>reloadTab</code></td>
+                  <td>Recharger la page</td>
+                  <td>
+                    <kbd>F5</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd>R</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>R</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyR</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>reloadTabWithoutCache</code></td>
+                  <td>Recharger la page depuis son origine</td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>F5</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>R</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Cmd</kbd>+<kbd>R</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyR</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>goToNextPage</code></td>
+                  <td>Accéder au document suivant</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Period</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>goToPreviousPage</code></td>
+                  <td>Accéder au document précédent</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Comma</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>removeURLParams</code></td>
+                  <td>Supprimer les paramètres de l’URL</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyU</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>goUp</code></td>
+                  <td>Accéder au dossier parent du site web</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyU</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>goToRoot</code></td>
+                  <td>Accéder à la page d’accueil du site web</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd>Maj</kbd>+<kbd class="code">KeyU</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="accessibility_commands">
+          <h3>
+            <a href="#accessibility_commands">
+              Accessibilité
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>focusTextInput</code></td>
+                  <td>Passer au champ de saisie suivant</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyI</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>focusMediaPlayer</code></td>
+                  <td>Passer au lecteur multimédia suivant</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyV</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>blurElement</code></td>
+                  <td>Mettre l’accent sur l’élément parent</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Escape</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="clipboard_commands">
+          <h3>
+            <a href="#clipboard_commands">
+              Presse-papiers
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>copyURL</code></td>
+                  <td>Copier le lien de la page</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyY</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>copyTitle</code></td>
+                  <td>Copier le titre de la page</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyY</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>copyTitleAndURL</code></td>
+                  <td>Copier le titre et le lien de la page</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyY</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p role="note">
+            Remarque : If Chrome notifications are enabled,
+            Shortcuts will show you a message for copied text.
+          </p>
+        </section>
+        <section id="save_pages_commands">
+          <h3>
+            <a href="#save_pages_commands">
+              Enregistrer des pages
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>savePage</code></td>
+                  <td>Enregistrer le contenu de la page</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>S</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>S</kbd>
+                  </td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyS</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>savePageAsMHTML</code></td>
+                  <td>Enregistrer la page au format MHTML</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd class="code">KeyS</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="web_search_commands">
+          <h3>
+            <a href="#web_search_commands">
+              Recherche sur le web
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>openWebSearchForSelectedText</code></td>
+                  <td>Effectuer une recherche web de la sélection</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyW</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="scroll_commands">
+          <h3>
+            <a href="#scroll_commands">
+              Faire défiler
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>scrollDown</code></td>
+                  <td>Faire défiler vers le bas</td>
+                  <td>
+                    <kbd>Flèche vers le bas</kbd>
+                  </td>
+                  <td>
+                    <kbd>Flèche vers le bas</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyJ</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>scrollUp</code></td>
+                  <td>Faire défiler vers le haut</td>
+                  <td>
+                    <kbd>Flèche vers le haut</kbd>
+                  </td>
+                  <td>
+                    <kbd>Flèche vers le haut</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyK</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>scrollLeft</code></td>
+                  <td>Faire défiler vers la gauche</td>
+                  <td>
+                    <kbd>Flèche gauche</kbd>
+                  </td>
+                  <td>
+                    <kbd>Flèche gauche</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyH</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>scrollRight</code></td>
+                  <td>Faire défiler vers la droite</td>
+                  <td>
+                    <kbd>Flèche droite</kbd>
+                  </td>
+                  <td>
+                    <kbd>Flèche droite</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyL</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>scrollPageDown</code></td>
+                  <td>Faire défiler d’un écran vers le bas</td>
+                  <td>
+                    <kbd>Espace</kbd>,
+                    <kbd>Page suivante</kbd>
+                  </td>
+                  <td>
+                    <kbd>Espace</kbd>,
+                    <kbd>Page suivante</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Space</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>scrollPageUp</code></td>
+                  <td>Faire défiler d’un écran vers le haut</td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Espace</kbd>,
+                    <kbd>Page précédente</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Espace</kbd>,
+                    <kbd>Page précédente</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Space</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>scrollHalfPageDown</code></td>
+                  <td>Faire défiler d’une moitié d’écran vers le bas</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyJ</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>scrollHalfPageUp</code></td>
+                  <td>Faire défiler d’une moitié d’écran vers le haut</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyK</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>scrollToTop</code></td>
+                  <td>Accéder au haut de la page</td>
+                  <td>
+                    <kbd>Début</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd>Flèche vers le haut</kbd>
+                  </td>
+                  <td>
+                    <kbd>Début</kbd>,
+                    <kbd>Cmd</kbd>+<kbd>Flèche vers le haut</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyG</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>scrollToBottom</code></td>
+                  <td>Accéder au bas de la page</td>
+                  <td>
+                    <kbd>Fin</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd>Flèche vers le bas</kbd>
+                  </td>
+                  <td>
+                    <kbd>Fin</kbd>,
+                    <kbd>Cmd</kbd>+<kbd>Flèche vers le bas</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyE</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="zoom_commands">
+          <h3>
+            <a href="#zoom_commands">
+              Zoom
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>zoomIn</code></td>
+                  <td>Augmenter la taille du texte</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Égal</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>Égal</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Égal</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>zoomOut</code></td>
+                  <td>Réduire la taille du texte</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Moins</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>Moins</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Minus</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>zoomReset</code></td>
+                  <td>Réinitialiser le niveau de zoom par défaut</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>0</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>0</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit0</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>toggleFullScreen</code></td>
+                  <td>Activer ou désactiver le mode plein écran</td>
+                  <td>
+                    <kbd>F11</kbd>
+                  </td>
+                  <td>
+                    <kbd>Globe</kbd>+<kbd>F</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>F</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyF</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="create_tabs_commands">
+          <h3>
+            <a href="#create_tabs_commands">
+              Créer des onglets
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>openNewTab</code></td>
+                  <td>Ouvrir un nouvel onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>T</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>T</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyT</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openNewTabRight</code></td>
+                  <td>Ouvrir un nouvel onglet à droite</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyO</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openNewWindow</code></td>
+                  <td>Ouvrir une nouvelle fenêtre</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>N</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>N</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyN</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openNewIncognitoWindow</code></td>
+                  <td>Ouvrir une nouvelle fenêtre de navigation privée</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>N</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Cmd</kbd>+<kbd>N</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyN</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="close_tabs_commands">
+          <h3>
+            <a href="#close_tabs_commands">
+              Fermer les onglets
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>closeTab</code></td>
+                  <td>Fermer l’onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>W</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd>F4</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>W</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyX</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>closeOtherTabs</code></td>
+                  <td>Fermer les autres onglets</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyX</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>closeRightTabs</code></td>
+                  <td>Fermer les onglets sur la droite</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd>Maj</kbd>+<kbd class="code">KeyX</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>closeWindow</code></td>
+                  <td>Fermer la fenêtre</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>W</kbd>,
+                    <kbd>Alt</kbd>+<kbd>F4</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Cmd</kbd>+<kbd>W</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyX</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>restoreTab</code></td>
+                  <td>Rouvrir l’onglet fermé</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>T</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Cmd</kbd>+<kbd>T</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">KeyU</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="tab_state_commands">
+          <h3>
+            <a href="#tab_state_commands">
+              Gérer les onglets
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>duplicateTab</code></td>
+                  <td>Dupliquer l’onglet</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyB</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>togglePinTab</code></td>
+                  <td>Épingler ou retirer l’onglet</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyP</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>toggleGroupTab</code></td>
+                  <td>Regrouper ou dégrouper les onglets</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyP</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>toggleCollapseTabGroups</code></td>
+                  <td>Réduire ou développer les groupes d’onglets</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyC</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>toggleMuteTab</code></td>
+                  <td>Couper ou réactiver le son de l’onglet</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyM</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>discardTab</code></td>
+                  <td>Suspendre l’onglet</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyD</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="organize_tabs_commands">
+          <h3>
+            <a href="#organize_tabs_commands">
+              Organiser les onglets
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>sortTabsByURL</code></td>
+                  <td>Organiser les onglets par nom</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Digit1</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>groupTabsByDomain</code></td>
+                  <td>Organiser les onglets par domaine</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Digit2</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="manage_tab_groups_commands">
+          <h3>
+            <a href="#manage_tab_groups_commands">
+              Gérer les groupes d’onglets
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>renameTabGroup</code></td>
+                  <td>Renommer le groupe d’onglets</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyR</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>cycleTabGroupColorForward</code></td>
+                  <td>Sélectionner la couleur suivante du groupe d’onglets</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyA</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>cycleTabGroupColorBackward</code></td>
+                  <td>Sélectionner la couleur précédente du groupe d’onglets</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd>Maj</kbd>+<kbd class="code">KeyA</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="switch_tabs_commands">
+          <h3>
+            <a href="#switch_tabs_commands">
+              Accéder aux onglets
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>activateAudibleTab</code></td>
+                  <td>Passer à l’onglet audible suivant</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Digit3</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateNextTab</code></td>
+                  <td>Passer à l’onglet suivant</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Tab</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd>Page suivante</kbd>
+                  </td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Tab</kbd>,
+                    <kbd>Opt</kbd>+<kbd>Cmd</kbd>+<kbd>Flèche droite</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Tab</kbd>,
+                    <kbd>Alt</kbd>+<kbd class="code">KeyK</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activatePreviousTab</code></td>
+                  <td>Passer à l’onglet précédent</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>Tab</kbd>,
+                    <kbd>Ctrl</kbd>+<kbd>Page précédente</kbd>
+                  </td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>Tab</kbd>,
+                    <kbd>Opt</kbd>+<kbd>Cmd</kbd>+<kbd>Flèche gauche</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Tab</kbd>,
+                    <kbd>Alt</kbd>+<kbd class="code">KeyJ</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateFirstTab</code></td>
+                  <td>Accéder au premier onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>1</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>1</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit1</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateSecondTab</code></td>
+                  <td>Accéder au deuxième onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>2</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>2</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit2</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateThirdTab</code></td>
+                  <td>Accéder au troisième onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>3</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>3</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit3</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateFourthTab</code></td>
+                  <td>Accéder au quatrième onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>4</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>4</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit4</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateFifthTab</code></td>
+                  <td>Accéder au cinquième onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>5</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>5</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit5</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateSixthTab</code></td>
+                  <td>Accéder au sixième onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>6</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>6</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit6</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateSeventhTab</code></td>
+                  <td>Accéder au septième onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>7</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>7</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit7</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateEighthTab</code></td>
+                  <td>Accéder au huitième onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>8</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>8</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit8</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateLastTab</code></td>
+                  <td>Accéder au dernier onglet</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>9</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>9</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Digit9</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateLastActiveTab</code></td>
+                  <td>Accéder au dernier onglet actif</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Digit1</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateSecondLastActiveTab</code></td>
+                  <td>Accéder à l’avant-dernier onglet actif</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Digit2</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateThirdLastActiveTab</code></td>
+                  <td>Accéder au troisième dernier onglet actif</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Digit3</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateFourthLastActiveTab</code></td>
+                  <td>Accéder au quatrième dernier onglet actif</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Digit4</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateFifthLastActiveTab</code></td>
+                  <td>Accéder au cinquième dernier onglet actif</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Digit5</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateSixthLastActiveTab</code></td>
+                  <td>Accéder au sixième dernier onglet actif</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Digit6</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateSeventhLastActiveTab</code></td>
+                  <td>Accéder au septième dernier onglet actif</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Digit7</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateEighthLastActiveTab</code></td>
+                  <td>Accéder au huitième dernier onglet actif</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Digit8</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateNinthLastActiveTab</code></td>
+                  <td>Accéder au neuvième dernier onglet actif</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">Digit9</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activateNextWindow</code></td>
+                  <td>Passer à la fenêtre suivante</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyW</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>activatePreviousWindow</code></td>
+                  <td>Passer à la fenêtre précédente</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyW</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="move_tabs_commands">
+          <h3>
+            <a href="#move_tabs_commands">
+              Déplacer les onglets
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>grabTab</code></td>
+                  <td>Regrouper les onglets</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyG</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>moveTabLeft</code></td>
+                  <td>Déplacer l’onglet vers la gauche</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>Page précédente</kbd>
+                  </td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>Page précédente</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">ArrowLeft</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>moveTabRight</code></td>
+                  <td>Déplacer l’onglet vers la droite</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>Page suivante</kbd>
+                  </td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>Page suivante</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">ArrowRight</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>moveTabFirst</code></td>
+                  <td>Déplacer l’onglet en première position</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">Home</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>moveTabLast</code></td>
+                  <td>Déplacer l’onglet en dernière position</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">End</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>moveTabNewWindow</code></td>
+                  <td>Déplacer l’onglet dans une nouvelle fenêtre</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">ArrowUp</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>moveTabPreviousWindow</code></td>
+                  <td>Déplacer l’onglet vers la fenêtre précédente</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">ArrowDown</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="select_tabs_commands">
+          <h3>
+            <a href="#select_tabs_commands">
+              Sélection de plusieurs onglets
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>selectActiveTab</code></td>
+                  <td>Désélectionner tous les autres onglets</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyS</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>selectPreviousTab</code></td>
+                  <td>Sélectionner l’onglet situé à gauche</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">BracketLeft</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>selectNextTab</code></td>
+                  <td>Sélectionner l’onglet situé à droite</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">BracketRight</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>selectRelatedTabs</code></td>
+                  <td>Sélectionner les onglets du même domaine</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">Backquote</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>selectTabsInGroup</code></td>
+                  <td>Sélectionner les onglets du même groupe</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">KeyA</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>selectAllTabs</code></td>
+                  <td>Sélectionner tous les onglets</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyA</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>selectRightTabs</code></td>
+                  <td>Sélectionner les onglets sur la droite</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyS</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>moveTabSelectionFaceBackward</code></td>
+                  <td>Basculer la sélection d’onglets vers la gauche</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">BracketLeft</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>moveTabSelectionFaceForward</code></td>
+                  <td>Basculer la sélection d’onglets vers la droite</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">BracketRight</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p role="tip">
+            Tip: Selecting tabs in group can be used for ungrouped tabs.
+          </p>
+        </section>
+        <section id="bookmarks_commands">
+          <h3>
+            <a href="#bookmarks_commands">
+              Favoris
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>bookmarkTab</code></td>
+                  <td>Ajouter l’onglet aux favoris</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>D</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>D</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyD</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>bookmarkSession</code></td>
+                  <td>Ajouter tous les onglets aux favoris</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>D</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Cmd</kbd>+<kbd>D</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">KeyB</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p role="note">
+            Remarque : If Chrome notifications are enabled,
+            Shortcuts will show you a message for created bookmarks.
+          </p>
+        </section>
+        <section id="reading_list_commands">
+          <h3>
+            <a href="#reading_list_commands">
+              Liste de lecture
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>addTabToReadingList</code></td>
+                  <td>Ajouter l’onglet à la liste de lecture</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Alt</kbd>+<kbd class="code">KeyD</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p role="note">
+            Remarque : If Chrome notifications are enabled,
+            Shortcuts will show you a message for pages added to your reading list.
+          </p>
+        </section>
+        <section id="folders_commands">
+          <h3>
+            <a href="#folders_commands">
+              Dossiers
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>openDownloadsFolder</code></td>
+                  <td>Ouvrir le dossier de téléchargements</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyK</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="chrome_urls_commands">
+          <h3>
+            <a href="#chrome_urls_commands">
+              Pages Chrome
+            </a>
+          </h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci du menu Shortcuts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>openBrowsingHistory</code></td>
+                  <td>Ouvrir l’historique de navigation</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>H</kbd>
+                  </td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>Y</kbd>
+                  </td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyH</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openSyncedTabsPage</code></td>
+                  <td>Ouvrir la page « Onglets d’autres appareils »</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyT</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openClearBrowserDataOptions</code></td>
+                  <td>Ouvrir les options « Supprimer les données de navigation »</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>Suppr</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Cmd</kbd>+<kbd>Suppr</kbd>
+                  </td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">Delete</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openDownloadHistory</code></td>
+                  <td>Ouvrir l’historique des téléchargements</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>J</kbd>
+                  </td>
+                  <td>
+                    <kbd>Opt</kbd>+<kbd>Cmd</kbd>+<kbd>L</kbd>
+                  </td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyJ</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openBookmarkManager</code></td>
+                  <td>Ouvrir le gestionnaire de favoris</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>O</kbd>
+                  </td>
+                  <td>
+                    <kbd>Opt</kbd>+<kbd>Cmd</kbd>+<kbd>B</kbd>
+                  </td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyO</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openSettings</code></td>
+                  <td>Ouvrir les réglages</td>
+                  <td></td>
+                  <td>
+                    <kbd>Cmd</kbd>+<kbd>Virgule</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Comma</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openAppearanceSettings</code></td>
+                  <td>Ouvrir les réglages « Apparence »</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><code>openPasswordManager</code></td>
+                  <td>Ouvrir le gestionnaire de mots de passe</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyY</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openPaymentMethodSettings</code></td>
+                  <td>Ouvrir les réglages « Modes de paiement »</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><code>openAddressSettings</code></td>
+                  <td>Ouvrir les réglages « Adresses et autres »</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><code>openSearchEngineSettings</code></td>
+                  <td>Ouvrir les réglages « Moteur de recherche »</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">Slash</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openExtensionsPage</code></td>
+                  <td>Ouvrir le gestionnaire d’extensions</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">KeyA</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openExtensionShortcutsPage</code></td>
+                  <td>Ouvrir l’éditeur de raccourcis des extensions</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd class="code">Equal</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openExperimentalSettings</code></td>
+                  <td>Ouvrir les options « Chrome flags »</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd class="code">Comma</kbd>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>openAboutChromePage</code></td>
+                  <td>Ouvrir la page « À propos de Chrome »</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><code>openAboutChromeVersionPage</code></td>
+                  <td>Ouvrir la page « À propos de la version de Chrome »</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><code>openWhatsNewPage</code></td>
+                  <td>Ouvrir la page « Nouveautés sur Chrome »</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="open_tab_suggestions">
+          <h3>
+            <a href="#open_tab_suggestions">
+              Suggestions liées aux onglets ouverts
+            </a>
+          </h3>
+          <p>
+            Ces commandes ne sont disponibles que dans la palette de commandes.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci de la palette de commandes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>activateSuggestion(openTabSuggestion)</code></td>
+                  <td>Activate suggestion in the tab strip</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>A</kbd>
+                    ou <code>@tabs</code> dans la barre d’adresse
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Cmd</kbd>+<kbd>A</kbd>
+                    ou <code>@tabs</code> dans la barre d’adresse
+                  </td>
+                  <td>
+                    <kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="recently_closed_tab_suggestions">
+          <h3>
+            <a href="#recently_closed_tab_suggestions">
+              Suggestions liées aux onglets récemment fermés
+            </a>
+          </h3>
+          <p>
+            Ces commandes ne sont disponibles que dans la palette de commandes.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci de la palette de commandes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>activateSuggestion(closedTabSuggestion)</code></td>
+                  <td>Reopen suggestion in a new tab</td>
+                  <td>
+                    <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>A</kbd>
+                  </td>
+                  <td>
+                    <kbd>Maj</kbd>+<kbd>Cmd</kbd>+<kbd>A</kbd>
+                  </td>
+                  <td>
+                    <kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="synced_tab_suggestions">
+          <h3>
+            <a href="#synced_tab_suggestions">
+              Suggestions liées aux onglets d’autres appareils
+            </a>
+          </h3>
+          <p>
+            Ces commandes ne sont disponibles que dans la palette de commandes.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci de la palette de commandes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>activateSuggestion(syncedTabSuggestion)</code></td>
+                  <td>Open suggestion in a new tab</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="bookmark_suggestions">
+          <h3>
+            <a href="#bookmark_suggestions">
+              Suggestions liées aux favoris
+            </a>
+          </h3>
+          <p>
+            Ces commandes ne sont disponibles que dans la palette de commandes.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci de la palette de commandes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>activateSuggestion(bookmarkSuggestion)</code></td>
+                  <td>Open and activate suggestion in a new tab</td>
+                  <td>
+                    <code>@bookmarks</code> dans la barre d’adresse
+                  </td>
+                  <td>
+                    <code>@bookmarks</code> dans la barre d’adresse
+                  </td>
+                  <td>
+                    <kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="reading_list_suggestions">
+          <h3>
+            <a href="#reading_list_suggestions">
+              Suggestions liées à la liste de lecture
+            </a>
+          </h3>
+          <p>
+            Ces commandes ne sont disponibles que dans la palette de commandes.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci de la palette de commandes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>activateSuggestion(readingListSuggestion)</code></td>
+                  <td>Open and activate suggestion in a new tab</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="recently_visited_page_suggestions">
+          <h3>
+            <a href="#recently_visited_page_suggestions">
+              Suggestions liées aux sites web récemment consultés
+            </a>
+          </h3>
+          <p>
+            Ces commandes ne sont disponibles que dans la palette de commandes.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci de la palette de commandes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>activateSuggestion(historySuggestion)</code></td>
+                  <td>Open and activate suggestion in a new tab</td>
+                  <td>
+                    <code>@history</code> dans la barre d’adresse
+                  </td>
+                  <td>
+                    <code>@history</code> dans la barre d’adresse
+                  </td>
+                  <td>
+                    <kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="download_suggestions">
+          <h3>
+            <a href="#download_suggestions">
+              Suggestions liées aux téléchargements
+            </a>
+          </h3>
+          <p>
+            Ces commandes ne sont disponibles que dans la palette de commandes.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Commande</th>
+                  <th>Description</th>
+                  <th>Raccourci Windows et Linux</th>
+                  <th>Raccourci macOS</th>
+                  <th>Raccourci de la palette de commandes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>activateSuggestion(downloadSuggestion)</code></td>
+                  <td>Show suggestion in its folder in a file manager</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <kbd class="code">Enter</kbd>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <p>
+          Pour découvrir plus de raccourcis clavier, consultez l’article <a href="https://support.google.com/chrome/answer/157179" target="_blank">Raccourcis clavier pour Chrome</a>.
+        </p>
+      </section>
+      <section id="tips_and_tricks">
+        <h2>
+          <a href="#tips_and_tricks">
+            Trucs et astuces
+          </a>
+        </h2>
+        <ul>
+          <li>
+            <strong>Pour fermer les onglets sur la droite</strong>—Appuyez sur <kbd class="code">Tab</kbd>, suivi de <kbd>Maj</kbd>+<kbd class="code">KeyS</kbd> pour sélectionner les onglets sur la droite, puis <kbd class="code">KeyX</kbd> pour fermer la sélection.
+          </li>
+          <li>
+            <strong>Pour fermer les autres onglets</strong>—Appuyez soit la touche de début « <kbd class="code">Home</kbd> » pour déplacer l’onglet que vous souhaitez conserver en première position, puis fermez les onglets sur la droite.
+          </li>
+          <li>
+            <strong>Pour déplacer un groupe d’onglets</strong>—Appuyez sur <kbd class="code">KeyA</kbd> pour sélectionner les onglets du même groupe, puis les touches fléchées « <kbd class="code">ArrowLeft</kbd> » ou « <kbd class="code">ArrowRight</kbd> » pour déplacer la sélection vers la gauche ou la droite.
+          </li>
+          <li>
+            <strong>Pour fusionner des fenêtres</strong>—Appuyez sur <kbd>Maj</kbd>+<kbd class="code">KeyA</kbd> pour sélectionner tous les onglets, puis la flèche vers le bas « <kbd class="code">Down</kbd> » pour déplacer la sélection vers la fenêtre précédente.
+          </li>
+        </ul>
+        <p>
+          Pour découvrir plus d’astuces, consultez l’article <a href="https://google.com/chrome/tips/" target="_blank">Astuces Chrome</a>.
+        </p>
+      </section>
+      <section id="contributing">
+        <h2>
+          <a href="#contributing">
+            Contribuer
+          </a>
+        </h2>
+        <p>
+          Signaler un problème via <a href="https://github.com/taupiqueur/chrome-shortcuts/issues" target="_blank">l’outil de suivi</a>,
+          poser une question sur le <a href="https://web.libera.chat/gamja/#taupiqueur" target="_blank">canal IRC</a>,
+          envoyer des correctifs sur la <a href="https://github.com/taupiqueur/chrome-shortcuts/pulls" target="_blank">liste de diffusion</a>.
+        </p>
+      </section>
+    </main>
+    <script type="module" src="manual.js"></script>
+  </body>
+</html>
