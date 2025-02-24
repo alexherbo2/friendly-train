@@ -1,10 +1,7 @@
 // This module contains the code to interpret the “manual.html” buttons,
 // and documenting physical keys.
 
-import {
-  keyCodeValuePopoverTemplate,
-  noKeyCodeValuePopoverTemplate,
-} from './messages.js'
+import MSG from './messages.js'
 
 const buttonElements = document.querySelectorAll('button[data-action]')
 const keyCodeElements = document.querySelectorAll('kbd.code')
@@ -45,7 +42,7 @@ for (const keyElement of keyCodeElements) {
     keyElement.replaceWith(
       createPopover(
         new Text(
-          keyCodeValuePopoverTemplate(keyValue)
+          MSG.keyCodeValuePopoverTemplate(keyValue)
         ),
         keyElement
       )
@@ -54,7 +51,7 @@ for (const keyElement of keyCodeElements) {
     keyElement.replaceWith(
       createPopover(
         new Text(
-          noKeyCodeValuePopoverTemplate(codeValue)
+          MSG.noKeyCodeValuePopoverTemplate(codeValue)
         ),
         keyElement
       )
