@@ -1,1 +1,1 @@
-manual.js
+../manual.js
