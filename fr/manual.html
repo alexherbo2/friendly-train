@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manuel Shortcuts</title>
-    <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="manual.css">
   </head>
   <body>
@@ -16,7 +15,7 @@
       </h1>
       <p role="important">
         Important : Nécessite soit <button popovertarget="chrome_version_notice_popover" class="tag-pill" title="Available from this Chrome version and higher.">Chrome 127+</button>, <a href="https://google.com/chrome/dev/" target="_blank">Chrome Dev</a> ou <a href="https://google.com/chrome/canary/" target="_blank">Chrome Canary</a> pour maintenir la popup au premier plan.
-        Consultez le changelog <a href="https://developer.chrome.com/docs/extensions/whats-new?hl=fr#chrome_127_new_actionopenpopup_api" target="_blank">Chrome 127: nouvelle API <code>action.openPopup</code></a> pour en savoir plus.
+        Consultez le changelog <a href="https://developer.chrome.com/docs/extensions/whats-new?hl=fr#chrome_127_new_actionopenpopup_api" target="_blank">Chrome 127 : nouvelle API <code>action.openPopup</code></a> pour en savoir plus.
       </p>
       <div id="chrome_version_notice_popover" popover>
         Disponible à partir de cette version de Chrome.
@@ -30,7 +29,7 @@
         <p>
           <kbd>Alt</kbd>+<kbd>Espace</kbd> (<kbd>Ctrl</kbd>+<kbd>Espace</kbd> sous Windows) est le raccourci principal.
           Utilisez-le pour ouvrir le menu de l’extension—aka mode « Vim ».
-          Appuyez sur <kbd>Ctrl</kbd>+<kbd class="code">KeyF</kbd> pour rechercher des commandes ou la touche d’échappement « <kbd class="code">Escape</kbd> » pour annuler.
+          Appuyez sur <kbd>Ctrl</kbd>+<kbd class="code">KeyF</kbd> pour rechercher des commandes ou la touche d’échappement « <kbd class="code">Escape</kbd> » pour quitter.
         </p>
         <p>
           Si vous avez besoin d’explications sur les raccourcis—Faites un clic droit sur l’icône de l’extension et sélectionnez « Documentation ».
@@ -222,7 +221,7 @@
               <div>
                 <button
                   aria-label="Copier"
-                  data-copy-feedback="Copié!"
+                  data-copy-feedback="Copié !"
                   data-action="copyToClipboard"
                   value="{
   &quot;commandBindings&quot;: [
@@ -423,13 +422,13 @@
               <kbd>⌃</kbd> représente la touche <kbd>Ctrl</kbd> sur votre clavier.
             </li>
             <li>
-              <kbd>⌥</kbd> représente la touche <kbd>Alt</kbd> ou <kbd>Opt</kbd> sur votre clavier macOS.
+              <kbd>⌥</kbd> représente la touche <kbd>Alt</kbd> ou <kbd>Opt</kbd> sur un clavier Mac.
             </li>
             <li>
               <kbd>⇧</kbd> représente la touche <kbd>Maj</kbd> sur votre clavier.
             </li>
             <li>
-              <kbd>⌘</kbd> représente la touche <kbd>Windows</kbd> ou <kbd>Cmd</kbd> sur votre clavier macOS.
+              <kbd>⌘</kbd> représente la touche <kbd>Windows</kbd> ou <kbd>Cmd</kbd> sur un clavier Mac.
             </li>
           </ul>
           <p>
@@ -444,8 +443,8 @@
             </figcaption>
           </figure>
           <p>
-            Pour obtenir la liste complète des touches physiques, consultez l’article <a href="https://w3c.github.io/uievents-code/#code-value-tables" lang="en" target="_blank">Keyboard Event <code>code</code> Value Tables</a> (en anglais).
-            Vous y trouverez la liste des touches physiques et informations relatives aux symboles.
+            Pour obtenir la liste complète des touches physiques, consultez l’article <a lang="en" href="https://w3c.github.io/uievents-code/#code-value-tables" target="_blank">Keyboard Event <code>code</code> Value Tables</a> (en anglais).
+            Vous y trouverez la liste des touches physiques et des symboles utilisés dans les raccourcis clavier—qui sont affichés dans les commandes du menu de l’extension.
           </p>
           <p role="tip">
             Astuce : Vous pouvez cliquer sur les touches roses—qui représentent une touche physique—pour voir la touche à appuyer
@@ -1414,7 +1413,7 @@
               <tbody>
                 <tr>
                   <td><code>sortTabsByURL</code></td>
-                  <td>Organiser les onglets par nom</td>
+                  <td>Organiser les onglets par domaine</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1423,7 +1422,7 @@
                 </tr>
                 <tr>
                   <td><code>groupTabsByDomain</code></td>
-                  <td>Organiser les onglets par domaine</td>
+                  <td>Regrouper les onglets par domaine</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1661,7 +1660,7 @@
                 </tr>
                 <tr>
                   <td><code>activateLastActiveTab</code></td>
-                  <td>Accéder au dernier onglet actif</td>
+                  <td>Passer à l’onglet le plus récent</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1670,7 +1669,7 @@
                 </tr>
                 <tr>
                   <td><code>activateSecondLastActiveTab</code></td>
-                  <td>Accéder à l’avant-dernier onglet actif</td>
+                  <td>Passer au deuxième onglet le plus récent</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1679,7 +1678,7 @@
                 </tr>
                 <tr>
                   <td><code>activateThirdLastActiveTab</code></td>
-                  <td>Accéder au troisième dernier onglet actif</td>
+                  <td>Passer au troisième onglet le plus récent</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1688,7 +1687,7 @@
                 </tr>
                 <tr>
                   <td><code>activateFourthLastActiveTab</code></td>
-                  <td>Accéder au quatrième dernier onglet actif</td>
+                  <td>Passer au quatrième onglet le plus récent</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1697,7 +1696,7 @@
                 </tr>
                 <tr>
                   <td><code>activateFifthLastActiveTab</code></td>
-                  <td>Accéder au cinquième dernier onglet actif</td>
+                  <td>Passer au cinquième onglet le plus récent</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1706,7 +1705,7 @@
                 </tr>
                 <tr>
                   <td><code>activateSixthLastActiveTab</code></td>
-                  <td>Accéder au sixième dernier onglet actif</td>
+                  <td>Passer au sixième onglet le plus récent</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1715,7 +1714,7 @@
                 </tr>
                 <tr>
                   <td><code>activateSeventhLastActiveTab</code></td>
-                  <td>Accéder au septième dernier onglet actif</td>
+                  <td>Passer au septième onglet le plus récent</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1724,7 +1723,7 @@
                 </tr>
                 <tr>
                   <td><code>activateEighthLastActiveTab</code></td>
-                  <td>Accéder au huitième dernier onglet actif</td>
+                  <td>Passer au huitième onglet le plus récent</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -1733,7 +1732,7 @@
                 </tr>
                 <tr>
                   <td><code>activateNinthLastActiveTab</code></td>
-                  <td>Accéder au neuvième dernier onglet actif</td>
+                  <td>Passer au neuvième onglet le plus récent</td>
                   <td></td>
                   <td></td>
                   <td>
@@ -2531,7 +2530,7 @@
             <strong>Pour fermer les onglets sur la droite</strong>—Appuyez sur <kbd class="code">Tab</kbd>, suivi de <kbd>Maj</kbd>+<kbd class="code">KeyS</kbd> pour sélectionner les onglets sur la droite, puis <kbd class="code">KeyX</kbd> pour fermer la sélection.
           </li>
           <li>
-            <strong>Pour fermer les autres onglets</strong>—Appuyez soit la touche de début « <kbd class="code">Home</kbd> » pour déplacer l’onglet que vous souhaitez conserver en première position, puis fermez les onglets sur la droite.
+            <strong>Pour fermer les autres onglets</strong>—Appuyez sur la touche de début « <kbd class="code">Home</kbd> » pour déplacer l’onglet que vous souhaitez conserver en première position, puis fermez les onglets sur la droite.
           </li>
           <li>
             <strong>Pour déplacer un groupe d’onglets</strong>—Appuyez sur <kbd class="code">KeyA</kbd> pour sélectionner les onglets du même groupe, puis les touches fléchées « <kbd class="code">ArrowLeft</kbd> » ou « <kbd class="code">ArrowRight</kbd> » pour déplacer la sélection vers la gauche ou la droite.
