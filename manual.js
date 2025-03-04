@@ -11,7 +11,7 @@ import messages from './messages.js'
  * @returns {string}
  */
 function getLocalizedMessage(messageName, substitutions) {
-  return messages[document.documentElement.lang][messageName].apply(substitutions)
+  return messages[document.documentElement.lang][messageName].apply(null, substitutions)
 }
 
 const buttonElements = document.querySelectorAll('button[data-action]')
